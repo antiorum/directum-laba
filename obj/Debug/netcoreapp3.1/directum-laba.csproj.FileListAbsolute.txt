@@ -1,0 +1,13 @@
+D:\с#\directum-laba\directum-laba\bin\Debug\netcoreapp3.1\directum-laba.exe
+D:\с#\directum-laba\directum-laba\bin\Debug\netcoreapp3.1\directum-laba.deps.json
+D:\с#\directum-laba\directum-laba\bin\Debug\netcoreapp3.1\directum-laba.runtimeconfig.json
+D:\с#\directum-laba\directum-laba\bin\Debug\netcoreapp3.1\directum-laba.runtimeconfig.dev.json
+D:\с#\directum-laba\directum-laba\bin\Debug\netcoreapp3.1\directum-laba.dll
+D:\с#\directum-laba\directum-laba\bin\Debug\netcoreapp3.1\directum-laba.pdb
+D:\с#\directum-laba\directum-laba\obj\Debug\netcoreapp3.1\directum-laba.csprojAssemblyReference.cache
+D:\с#\directum-laba\directum-laba\obj\Debug\netcoreapp3.1\directum-laba.csproj.CoreCompileInputs.cache
+D:\с#\directum-laba\directum-laba\obj\Debug\netcoreapp3.1\directum-laba.AssemblyInfoInputs.cache
+D:\с#\directum-laba\directum-laba\obj\Debug\netcoreapp3.1\directum-laba.AssemblyInfo.cs
+D:\с#\directum-laba\directum-laba\obj\Debug\netcoreapp3.1\directum-laba.dll
+D:\с#\directum-laba\directum-laba\obj\Debug\netcoreapp3.1\directum-laba.pdb
+D:\с#\directum-laba\directum-laba\obj\Debug\netcoreapp3.1\directum-laba.genruntimeconfig.cache

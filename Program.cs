@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq.Expressions;
+using System.Threading;
 
 namespace directum_laba
 {
@@ -6,7 +8,9 @@ namespace directum_laba
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MeetingWithRemind meeting = new MeetingWithRemind(DateTime.Now.AddMinutes(2));
+            meeting.Remind += () => Console.WriteLine("Event was generated");
+            Console.ReadLine();
         }
     }
 }
