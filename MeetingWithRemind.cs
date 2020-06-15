@@ -15,7 +15,7 @@ namespace directum_laba
         public MeetingWithRemind(DateTime remindTime)
         {
             RemindTime = remindTime;
-            Timer timer = new Timer(5000);
+            Timer timer = new Timer(60_000);
             timer.Elapsed += ElapseHandle;
             timer.Start();
         }
@@ -39,12 +39,11 @@ namespace directum_laba
 
         private void ElapseHandle(Object source, ElapsedEventArgs e)
         {
-            Console.WriteLine(e.SignalTime.ToLocalTime());
-            if (e.SignalTime > this.GetRemindTime())
+            if (e.SignalTime >= RemindTime)
             {
                 Console.WriteLine("Timer will be stopped");
-                Timer timer = (Timer)source;
                 Remind();
+                Timer timer = (Timer)source;
                 timer.Stop();
             }
         }
