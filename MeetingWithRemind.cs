@@ -20,6 +20,7 @@ namespace directum_laba
             timer.Start();
         }
 
+    // Зачем нужно свойство, если есть методы? Можно в самих сетодах менять _remindTime.
         public DateTime RemindTime
         {
             get { return _remindTime; }

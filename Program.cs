@@ -6,6 +6,7 @@ namespace directum_laba
 {
     class Program
     {
+    // Заметил проблему со стилем. На следующей лекции скажу про StyleCop.
         static void Main(string[] args)
         {
             MeetingWithRemind meeting = new MeetingWithRemind(DateTime.Now.AddMinutes(2));
