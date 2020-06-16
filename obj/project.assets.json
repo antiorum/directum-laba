@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\с#\\directum-laba\\directum-laba\\directum-laba.csproj",
+      "projectUniqueName": "D:\\с#\\directum-laba\\directum-laba.csproj",
       "projectName": "directum-laba",
-      "projectPath": "D:\\с#\\directum-laba\\directum-laba\\directum-laba.csproj",
+      "projectPath": "D:\\с#\\directum-laba\\directum-laba.csproj",
       "packagesPath": "C:\\Users\\Фобка\\.nuget\\packages\\",
-      "outputPath": "D:\\с#\\directum-laba\\directum-laba\\obj\\",
+      "outputPath": "D:\\с#\\directum-laba\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Фобка\\AppData\\Roaming\\NuGet\\NuGet.Config",
