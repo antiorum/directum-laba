@@ -12,8 +12,8 @@
         /// </summary>
         public static void Main()
         {
-            // 54 предупреждения от StyleCop.
-            // + В MeetingWithRemind лучше либо убрать свойство, либо убрать методы и переделать интерфейс на свойства.
+            // 54 предупреждения от StyleCop. 
+            // + В MeetingWithRemind лучше либо убрать свойство, либо убрать методы и переделать интерфейс на свойства. 
             MeetingWithRemind meeting = new MeetingWithRemind(DateTime.Now.AddMinutes(2));
             meeting.BeginTime = DateTime.Now.AddDays(1);
             meeting.EndTime = DateTime.Now.AddDays(1).AddHours(1);

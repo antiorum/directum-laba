@@ -30,7 +30,7 @@
         public double InnerRadius { get; }
 
         /// <summary>
-        /// Вычисляет окружность внутренней окружности
+        /// Вычисляет окружность внутренней окружности  // Длину?
         /// </summary>
         public double InnerCircumference
         {

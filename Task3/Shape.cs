@@ -38,7 +38,8 @@
         /// <summary>
         /// Геттер для коллекции вершин
         /// </summary>
-        public virtual List<Coordinate> Vertexes { get => this.vertexes; }
+        public virtual List<Coordinate> Vertexes { get => this.vertexes; } // Есть более краткая запись Vertexes => this.vertexes;
+                                                                           // Лучше использовать её.
 
         /// <summary>
         /// Геттер для координат центра
@@ -50,7 +51,7 @@
         /// В ином случае возвращает 0.
         /// </summary>
         /// <returns>длину первой стороны, как ни странно.</returns>
-        protected double FirstEdge()
+        protected double FirstEdge()    // Эти методы слишком конкретные для абстрактного класса. Лучше обойтись без них.
         {
             return this.GetLength(this.Vertexes[0], this.Vertexes[1]);
         }
@@ -75,7 +76,7 @@
             return this.GetLength(this.Vertexes[2], this.Vertexes[0]);
         }
 
-        private double GetLength(Coordinate cor1, Coordinate cor2)
+        private double GetLength(Coordinate cor1, Coordinate cor2)  // Не хватает документации.
         {
             return this.Vertexes.Count > 0 ? ShapeUtil.GetEdgeLength(cor1, cor2) : 0;
         }
