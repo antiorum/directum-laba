@@ -1,7 +1,6 @@
 ﻿namespace Directum_laba.Task3
 {
     using System.Collections.Generic;
-    using static System.Math;
 
     /// <summary>
     /// Класс, который определяет абстрактную фигуру
@@ -53,7 +52,7 @@
         /// <returns>длину первой стороны, как ни странно.</returns>
         protected double FirstEdge()
         {
-            return this.Vertexes.Count > 0 ? ShapeUtil.GetEdgeLength(this.Vertexes[0], this.Vertexes[1]) : 0;
+            return this.GetLength(this.Vertexes[0], this.Vertexes[1]);
         }
 
         /// <summary>
@@ -63,7 +62,7 @@
         /// <returns>Длину второй стороны.</returns>
         protected double SecondEdge()
         {
-            return this.Vertexes.Count > 0 ? ShapeUtil.GetEdgeLength(this.Vertexes[1], this.Vertexes[2]) : 0;
+            return this.GetLength(this.Vertexes[1], this.Vertexes[2]);
         }
 
         /// <summary>
@@ -73,7 +72,12 @@
         /// <returns>Длину третьей стороны</returns>
         protected virtual double ThirdEdge()
         {
-            return this.Vertexes.Count > 0 ? ShapeUtil.GetEdgeLength(this.Vertexes[2], this.Vertexes[0]) : 0;
+            return this.GetLength(this.Vertexes[2], this.Vertexes[0]);
+        }
+
+        private double GetLength(Coordinate cor1, Coordinate cor2)
+        {
+            return this.Vertexes.Count > 0 ? ShapeUtil.GetEdgeLength(cor1, cor2) : 0;
         }
     }
 }
