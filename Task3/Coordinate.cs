@@ -49,7 +49,7 @@
         /// <returns>Результат сравнения в виде bool</returns>
         public override bool Equals(object obj)
         {
-            if (obj.GetType().Name != "Coordinate") 
+            if (!(obj is Coordinate))
             {
                 return false;
             } 
