@@ -6,4 +6,11 @@
     <RootNamespace>directum_laba</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Update="Task3\Rectangle.cs">
+      <ExcludeFromSourceAnalysis>False</ExcludeFromSourceAnalysis>
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+  </ItemGroup>
+
 </Project>

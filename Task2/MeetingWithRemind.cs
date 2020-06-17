@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Timers;
 
-namespace directum_laba
+namespace Directum_laba
 {
     class MeetingWithRemind : Meeting, IRemind
     {

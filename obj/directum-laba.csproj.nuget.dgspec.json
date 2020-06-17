@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\с#\\directum-laba\\directum-laba.csproj": {}
+    "D:\\с#\\directum-laba\\Directum-laba.csproj": {}
   },
   "projects": {
-    "D:\\с#\\directum-laba\\directum-laba.csproj": {
+    "D:\\с#\\directum-laba\\Directum-laba.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\с#\\directum-laba\\directum-laba.csproj",
-        "projectName": "directum-laba",
-        "projectPath": "D:\\с#\\directum-laba\\directum-laba.csproj",
+        "projectUniqueName": "D:\\с#\\directum-laba\\Directum-laba.csproj",
+        "projectName": "Directum-laba",
+        "projectPath": "D:\\с#\\directum-laba\\Directum-laba.csproj",
         "packagesPath": "C:\\Users\\Фобка\\.nuget\\packages\\",
         "outputPath": "D:\\с#\\directum-laba\\obj\\",
         "projectStyle": "PackageReference",

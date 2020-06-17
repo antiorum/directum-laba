@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Channels;
 
-namespace directum_laba
+namespace Directum_laba
 {
     class Meeting
     {

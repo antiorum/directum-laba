@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("directum-laba")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Directum-laba")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("directum-laba")]
-[assembly: System.Reflection.AssemblyTitleAttribute("directum-laba")]
+[assembly: System.Reflection.AssemblyProductAttribute("Directum-laba")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Directum-laba")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace directum_laba
+namespace Directum_laba
 {
     interface IRemind
     {

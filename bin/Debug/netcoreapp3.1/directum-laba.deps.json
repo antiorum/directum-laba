@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "directum-laba/1.0.0": {
+      "Directum-laba/1.0.0": {
         "runtime": {
-          "directum-laba.dll": {}
+          "Directum-laba.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "directum-laba/1.0.0": {
+    "Directum-laba/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
