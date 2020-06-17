@@ -1,7 +1,6 @@
-﻿namespace Directum_laba
+﻿namespace Directum_laba.Task3
 {
     using System;
-    using Directum_laba.Task3;
 
     /// <summary>
     /// Класс для точки входа в приложение
@@ -13,12 +12,6 @@
         /// </summary>
         public static void Main()
         {
-            // MeetingWithRemind meeting = new MeetingWithRemind(DateTime.Now.AddMinutes(2));
-            // meeting.BeginTime = DateTime.Now.AddDays(1);
-            // meeting.EndTime = DateTime.Now.AddDays(1).AddHours(1);
-            // Console.WriteLine(meeting.Duration);
-            // meeting.Remind += () => Console.WriteLine("Event was generated");
-            // Console.ReadLine();
             Coordinate center = new Coordinate(0.2, 0.3);
             Ring ring = new Ring(5, 4, center);
             Console.WriteLine(ring.Circumference);
