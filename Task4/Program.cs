@@ -72,7 +72,7 @@
         /// <summary>
         /// Сравнивает и печатает скорость работы классов String и StringBuilder.
         /// </summary>
-        /// <param name="stringsToConcat">Количество строк, которые будут конкатенироватсья.</param>
+        /// <param name="stringsToConcat">Количество строк, которые будут конкатенироваться.</param>
         /// <param name="stringLength">Длина строки, из которой будет извлекаться подстрока.</param>
         /// <param name="substringLength">Длина подстроки.</param>
         public static void StringAndStringBuilderCompare(int stringsToConcat, int stringLength, int substringLength)
