@@ -80,38 +80,41 @@
             string[] stringsArray = new string[stringsToConcat];
             Array.Fill<string>(stringsArray, "a");
 
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (var s in stringsArray)
+            Action<string[]> stringBuilderConcat = (array) =>
             {
-                stringBuilder.Append(s);
-            }
+                StringBuilder stringBuilder = new StringBuilder();
+                foreach (var s in array)
+                {
+                    stringBuilder.Append(s);
+                }
+            };
 
-            stopwatch.Stop();
-            Console.WriteLine($"Время работы StringBuilder по конкатенации {stringsToConcat} строк составило {stopwatch.ElapsedMilliseconds} миллисекунд.");
-
-            stopwatch.Restart();
-            string seed = string.Empty;
-            foreach (var s in stringsArray)
+            Action<string[]> stringConcat = (array) =>
             {
-                seed += s;
-            }
+                string seed = string.Empty;
+                foreach (var s in array)
+                {
+                    seed += s;
+                }
+            };
 
-            stopwatch.Stop();
-            Console.WriteLine($"Время работы String по конкатенации {stringsToConcat} строк составило {stopwatch.ElapsedMilliseconds} миллисекунд.");
+            Console.WriteLine($"Время работы StringBuilder по конкатенации {stringsToConcat} строк составило {GetTimeConcat(stringBuilderConcat, stringsArray)} миллисекунд.");
+            Console.WriteLine($"Время работы String по конкатенации {stringsToConcat} строк составило {GetTimeConcat(stringConcat, stringsArray)} миллисекунд.");
 
             string from = new string('a', stringLength);
 
-            stopwatch.Restart();
-            new StringBuilder(from).ToString(0, substringLength);
-            stopwatch.Stop();
-            Console.WriteLine($"Время работы StringBuilder по получению подстроки длиной {substringLength} из строки длиной {stringLength} составило {stopwatch.ElapsedMilliseconds} миллисекунд.");
+            Action<string, int> stringBuilderSubstring = (from, sub) =>
+            {
+                new StringBuilder(from).ToString(0, sub);
+            };
 
-            stopwatch.Restart();
-            from.Substring(0, substringLength);
-            stopwatch.Stop();
-            Console.WriteLine($"Время работы String по получению подстроки длиной {substringLength} из строки длиной {stringLength} составило {stopwatch.ElapsedMilliseconds} миллисекунд.");
+            Action<string, int> stringSubstring = (from, sub) =>
+            {
+                from.Substring(0, sub);
+            };
+
+            Console.WriteLine($"Время работы StringBuilder по получению подстроки длиной {substringLength} из строки длиной {stringLength} составило {GetTimeSubstring(stringBuilderSubstring, from, substringLength)} миллисекунд.");
+            Console.WriteLine($"Время работы String по получению подстроки длиной {substringLength} из строки длиной {stringLength} составило {GetTimeSubstring(stringSubstring, from, substringLength)} миллисекунд.");
         }
 
         /// <summary>
@@ -154,6 +157,37 @@
             booksTable.Rows.Add(row); // добавляем первую строку
             booksTable.Rows.Add(new object[] { null, "Отцы и дети", 170 }); // добавляем вторую строку
             Console.WriteLine(DataSetToString(bookStore, "***END OF TABLE*** \n", "\n----------------------\n", "|"));
+        }
+
+        /// <summary>
+        /// Измеряет время действий по конкатенации строк.
+        /// </summary>
+        /// <param name="concatAction">Функция конкатенации.</param>
+        /// <param name="arg">Массив строк для конкатенации.</param>
+        /// <returns>Кол-во миллисекунд.</returns>
+        private static long GetTimeConcat(Action<string[]> concatAction, string[] arg)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            concatAction.Invoke(arg);
+            stopwatch.Stop();
+            return stopwatch.ElapsedMilliseconds;
+        }
+
+        /// <summary>
+        /// Измеряет время получения подстроки.
+        /// </summary>
+        /// <param name="substringAction">Функция получения подстроки.</param>
+        /// <param name="from">Строка, из которой получают подстроку.</param>
+        /// <param name="subLength">Длина подстроки.</param>
+        /// <returns>Кол-во миллисекунд.</returns>
+        private static long GetTimeSubstring(Action<string, int> substringAction, string from, int subLength)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            substringAction.Invoke(from, subLength);
+            stopwatch.Stop();
+            return stopwatch.ElapsedMilliseconds;
         }
     }
 }
