@@ -16,7 +16,7 @@
         public static void Main()
         {
             // Проверяем работу классов-встреч.
-            MeetingWithType meetingWithType = new MeetingWithType(MeetingType.Instruction);
+            MeetingWithType meetingWithType = new MeetingWithType(MeetingWithType.MeetingType.Instruction);
             MeetingWithNoEnd meetingWithNoEnd = new MeetingWithNoEnd(DateTime.Now);
             Console.WriteLine(meetingWithType.Type);
             Console.WriteLine(meetingWithNoEnd.Duration);
@@ -29,10 +29,10 @@
             AccessRightsUtil.PrintRights(AccessRights.AccessDenied);
 
             // Проверяем работу логгера.
-            using (Logger logger = new Logger(@"D:/1.txt"))
+            using (Logger logger = new Logger(@".\log.txt"))
             {
-                logger.WriteString("666");
-                logger.WriteString("Welcome to hell");
+                logger.WriteString("My little pony");
+                logger.WriteString("Friendship is magic!");
             }
 
             // Проверяем работу сравнения стринг и стринг-билдер.

@@ -20,13 +20,14 @@
 
             // Раскомментировать, чтобы изменить язык на англ
             // CultureInfo.CurrentCulture = new CultureInfo("en");
-            if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "ru")
+            switch (CultureInfo.CurrentCulture.TwoLetterISOLanguageName)
             {
-                document = XDocument.Load(@".\ru.xml");
-            }
-            else if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "en")
-            {
-                document = XDocument.Load(@".\en.xml");
+                case "ru": 
+                    document = XDocument.Load(@".\ru.xml");
+                    break;
+                case "en":
+                    document = XDocument.Load(@".\en.xml");
+                    break;
             }
 
             E_CANT_CHANGE_PASSWORD_WITH_OS_AUTHENTIFICATION1 = document.Element("root").Elements("local_string")
@@ -55,7 +56,7 @@
         public static void Main()
         {
             // Проверяем работу метода поиска максимума
-            Console.WriteLine(GetMax(6, 4, 1));
+            Console.WriteLine(GetMax(6, 1, 3));
 
             // Проверяем работу локализации
             Console.WriteLine(E_CANT_CHANGE_PASSWORD_WITH_OS_AUTHENTIFICATION1);

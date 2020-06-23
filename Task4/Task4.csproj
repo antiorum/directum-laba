@@ -16,4 +16,10 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="log.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
