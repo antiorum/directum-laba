@@ -21,7 +21,7 @@
             // Проверяем работу метода, подсчитывающего количество событий
             DateTime begin = new DateTime(2007, 12, 17);
             DateTime end = new DateTime(2007, 12, 17);
-            var count = GetEventCountFromLog(@"D:\examples\Logs\ClientConnectionLog.log", begin, end);
+            var count = GetEventCountFromLog(@".\ClientConnectionLog.log", begin, end);
             Console.WriteLine(count);
         }
 

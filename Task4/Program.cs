@@ -80,35 +80,17 @@
             string[] stringsArray = new string[stringsToConcat];
             Array.Fill<string>(stringsArray, "a");
 
-            Action<string[]> stringBuilderConcat = (array) =>
-            {
-                StringBuilder stringBuilder = new StringBuilder();
-                foreach (var s in array)
-                {
-                    stringBuilder.Append(s);
-                }
-            };
-
-            Action<string[]> stringConcat = (array) =>
-            {
-                string seed = string.Empty;
-                foreach (var s in array)
-                {
-                    seed += s;
-                }
-            };
-
-            Console.WriteLine($"Время работы StringBuilder по конкатенации {stringsToConcat} строк составило {GetTimeConcat(stringBuilderConcat, stringsArray)} миллисекунд.");
-            Console.WriteLine($"Время работы String по конкатенации {stringsToConcat} строк составило {GetTimeConcat(stringConcat, stringsArray)} миллисекунд.");
+            Console.WriteLine($"Время работы StringBuilder по конкатенации {stringsToConcat} строк составило {GetTimeConcat(StringBuilderConcat, stringsArray)} миллисекунд.");
+            Console.WriteLine($"Время работы String по конкатенации {stringsToConcat} строк составило {GetTimeConcat(StringConcat, stringsArray)} миллисекунд.");
 
             string from = new string('a', stringLength);
 
-            Action<string, int> stringBuilderSubstring = (from, sub) =>
+            Action<string, int> stringBuilderSubstring = (string from, int sub) =>
             {
                 new StringBuilder(from).ToString(0, sub);
             };
 
-            Action<string, int> stringSubstring = (from, sub) =>
+            Action<string, int> stringSubstring = (string from, int sub) =>
             {
                 from.Substring(0, sub);
             };
@@ -156,7 +138,34 @@
             row.ItemArray = new object[] { null, "Война и мир", 200 };
             booksTable.Rows.Add(row); // добавляем первую строку
             booksTable.Rows.Add(new object[] { null, "Отцы и дети", 170 }); // добавляем вторую строку
+
             Console.WriteLine(DataSetToString(bookStore, "***END OF TABLE*** \n", "\n----------------------\n", "|"));
+        }
+
+        /// <summary>
+        /// Выполняет конкатенцию строк из массива средствами String.
+        /// </summary>
+        /// <param name="array">Массив строк.</param>
+        private static void StringConcat(string[] array)
+        {
+            string seed = string.Empty;
+            foreach (var s in array)
+            {
+                seed += s;
+            }
+        }
+
+        /// <summary>
+        /// Выполняет конкатенцию строк из массива средствами StringBuilder.
+        /// </summary>
+        /// <param name="array">Массив строк.</param>
+        private static void StringBuilderConcat(string[] array)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (var s in array)
+            {
+                stringBuilder.Append(s);
+            }
         }
 
         /// <summary>

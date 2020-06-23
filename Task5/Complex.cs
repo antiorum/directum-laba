@@ -34,19 +34,28 @@
         public double Im => this.inner.Imaginary;
 
         /// <summary>
+        /// Вычисляет абсолютное значение.
+        /// </summary>
+        public double Abs
+        {
+            get
+            {
+                return Math.Sqrt(Math.Pow(this.Re, 2) + Math.Pow(this.Im, 2));
+            }
+        }
+
+        /// <summary>
         /// Сравнивает два комплексных числа по модулю
         /// </summary>
         /// <param name="other">Второе комплексное число для сравнения</param>
         /// <returns>Результат сравнения - целое число</returns>
         public int CompareTo([AllowNull] Complex other)
         {
-            double mod1 = Math.Sqrt(Math.Pow(this.Re, 2) + Math.Pow(this.Im, 2));
-            double mod2 = Math.Sqrt(Math.Pow(other.Re, 2) + Math.Pow(other.Im, 2));
-            if (mod1 < mod2)
+            if (this.Abs < other.Abs)
             {
                 return -1;
             }
-            else if (mod1 > mod2)
+            else if (this.Abs > other.Abs)
             {
                 return 1;
             }

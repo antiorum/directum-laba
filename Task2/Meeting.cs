@@ -6,9 +6,9 @@
         public DateTime BeginTime { get; set; }
         public DateTime EndTime { get; set; }
 
-        public virtual string Duration
+        public virtual TimeSpan Duration
         {
-            get { return EndTime.Subtract(BeginTime).ToString(); }
+            get { return EndTime.Subtract(BeginTime); }
         }
 
     }

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<local_string id="E_CANT_CHANGE_PASSWORD_WITH_OS_AUTHENTIFICATION">Cannot change password when using Windows-authentication.</local_string>
+	<local_string id="DEBUGGER_MAIN_FORM_TRACE_INTO_ACTION_CAPTION">Trace into</local_string>
+</root>
+

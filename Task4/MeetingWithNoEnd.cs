@@ -30,13 +30,13 @@
         }
 
         /// <summary>
-        /// Продолжительность встречи
+        /// Продолжительность встречи. Если неизвестна - возвращает максимальное значение.
         /// </summary>
-        public override string Duration
+        public override TimeSpan Duration
         {
             get
             {
-                return this.EndTime == DateTime.MaxValue ? "unknown" : base.Duration;
+                return this.EndTime == DateTime.MaxValue ? TimeSpan.MaxValue : base.Duration;
             }
         }
     }

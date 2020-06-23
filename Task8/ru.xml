@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE root [  
+  <!ATTLIST local_string id IDREF #REQUIRED >]>  
+<root>
+	<local_string id="E_CANT_CHANGE_PASSWORD_WITH_OS_AUTHENTIFICATION">Нельзя изменять пароль при использовании Windows-аутентификации.</local_string>
+	<local_string id="DEBUGGER_MAIN_FORM_TRACE_INTO_ACTION_CAPTION">Шаг в</local_string>
+</root>
+
