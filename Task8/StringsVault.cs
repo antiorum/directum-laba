@@ -1,8 +1,10 @@
 ﻿namespace Task8
 {
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
 
     /// <summary>
     /// Класс, перебирающий строки из файла.
@@ -46,6 +48,19 @@
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
+        }
+
+        /// <summary>
+        /// Фильтрует и сортирует строки по дате.
+        /// </summary>
+        /// <param name="date">Дата для нахождения записей.</param>
+        /// <returns>Список строк.</returns>
+        public List<string> GetFiltredAndOrdredStrings(DateTime date)
+        {
+            return this.strings
+                .Where(line => line.StartsWith($"{date.Day}.{date.Month}.{date.Year}"))
+                .OrderBy(line => line)
+                .ToList();
         }
     }
 }
