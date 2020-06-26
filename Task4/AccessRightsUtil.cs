@@ -19,8 +19,7 @@
                 return;
             }
 
-            byte k = (byte)rights;
-            Console.WriteLine("{0:G}, {1:G}", (AccessRights)(k - 1), (AccessRights)k);
+            Console.WriteLine("{0:G}, {1:G}", rights - 1, rights);
         }
     }
 }
