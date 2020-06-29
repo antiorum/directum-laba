@@ -20,7 +20,7 @@
             excelApp.DisplayAlerts = false;
             excelApp.Visible = true;
             excelApp.SheetsInNewWorkbook = 1;
-            Workbook book = excelApp.Workbooks.Add(Type.Missing);
+            excelApp.Workbooks.Add(Type.Missing);
 
             Worksheet worksheet = excelApp.Worksheets[1];
             worksheet.Name = "Таблица умножения";
@@ -57,7 +57,6 @@
                 Type.Missing,
                 Type.Missing,
                 Type.Missing);
-            excelApp.Quit(); // А зачем?
         }
     }
 }

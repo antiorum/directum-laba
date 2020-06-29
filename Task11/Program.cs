@@ -2,12 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Task8;
 
     /// <summary>
     /// Просто главный класс.
     /// </summary>
-    internal class Program
+    internal static class Program
     {
         /// <summary>
         /// Точка входа в программу.
@@ -20,7 +21,22 @@
             foreach (string s in filtred)
             {
                 Console.WriteLine(s);
-            }
+            }          
+        }
+
+        /// <summary>
+        /// Метод расширения для класса <see cref="StringsVault"/>.
+        /// Фильтрует строки по дате и сортирует по времени.
+        /// </summary>
+        /// <param name="vault">Экземпляр класса, к которому применяется расширяющий метод.</param>
+        /// <param name="date">Дата для нахождения записей.</param>
+        /// <returns>Список строк.</returns>
+        internal static List<string> GetFiltredAndOrdredStrings(this StringsVault vault, DateTime date)
+        {
+            return vault.Strings
+                .Where(line => line.StartsWith($"{date.Day}.{date.Month}.{date.Year}"))
+                .OrderBy(line => line)
+                .ToList();
         }
     }
 }

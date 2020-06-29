@@ -19,8 +19,8 @@
             // Загружает две версии одной библиотеки. Создает экземпляры классов и печатает свойства.
             // В .net core не работает.
             string currentWay = Directory.GetCurrentDirectory();
-            CreateInstanceAndPrintProperties($@"{currentWay}\old version lib\TestLib.dll", "TestLib.TestClass");
-            CreateInstanceAndPrintProperties($@"{currentWay}\new version lib\TestLib.dll", "TestLib.TestClass");
+            CreateInstanceAndPrintProperties($@"{currentWay}\old version dll\TestLib.dll", "TestLib.TestClass");
+            CreateInstanceAndPrintProperties($@"{currentWay}\new version dll\TestLib.dll", "TestLib.TestClass");
 
             // Проверяем чтение конфига.
             // Чтение общих свойств.
