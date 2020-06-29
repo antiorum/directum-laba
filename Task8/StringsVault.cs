@@ -59,7 +59,7 @@
         {
             return this.strings
                 .Where(line => line.StartsWith($"{date.Day}.{date.Month}.{date.Year}"))
-                .OrderBy(line => line)
+                .OrderBy(line => line)  // Какая строка будет выше 10.01.1999 или 20.01.2020?
                 .ToList();
         }
     }

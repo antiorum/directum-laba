@@ -57,7 +57,7 @@
                 Type.Missing,
                 Type.Missing,
                 Type.Missing);
-            excelApp.Quit();
+            excelApp.Quit(); // А зачем?
         }
     }
 }
