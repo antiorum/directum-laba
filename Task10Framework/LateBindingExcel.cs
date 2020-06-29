@@ -18,7 +18,7 @@
             excelApp.DisplayAlerts = false;
             excelApp.Visible = true;
             excelApp.SheetsInNewWorkbook = 1;
-            dynamic book = excelApp.Workbooks.Add(Type.Missing);
+            dynamic book = excelApp.Workbooks.Add(Type.Missing);  // Переменная book не используется.
 
             dynamic worksheet = excelApp.Worksheets[1];
             worksheet.Name = "Таблица умножения";
@@ -62,7 +62,7 @@
                 Type.Missing, 
                 Type.Missing);
 
-            excelApp.Quit();
+            excelApp.Quit();  // А зачем?
         }
     }
 }
