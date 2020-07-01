@@ -53,10 +53,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="new version dll\TestLib.dll">
+    <Content Include="new_version_dll\TestLib.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="old version dll\TestLib.dll">
+    <Content Include="old_version_dll\TestLib.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

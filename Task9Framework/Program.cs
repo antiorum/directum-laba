@@ -15,20 +15,21 @@
         /// Точка входа в приложение.
         /// </summary>
         public static void Main()
-        {
-            // Загружает две версии одной библиотеки. Создает экземпляры классов и печатает свойства.             // Лучше писать это в консоль. А то из консоли не понятно, что к чему относится.
+        {             
             // В .net core не работает.
-            string currentWay = Directory.GetCurrentDirectory();                                                  // Не требуется.
-            CreateInstanceAndPrintProperties($@"{currentWay}\old version dll\TestLib.dll", "TestLib.TestClass");  // Посмотре что получается в bin/Debug/. Путь: "./old version dll/TestLib.dll".
-            CreateInstanceAndPrintProperties($@"{currentWay}\new version dll\TestLib.dll", "TestLib.TestClass");  // Кстати, что-то при разговоре забыл упомянуть, что пробелы в названии это плохо.
+            Console.WriteLine("Загружаем две версии одной библиотеки. Создаем экземпляры классов и печатаем свойства.");
+            string currentWay = Directory.GetCurrentDirectory();                                                  
+            CreateInstanceAndPrintProperties($@"{currentWay}\old_version_dll\TestLib.dll", "TestLib.TestClass"); 
+            CreateInstanceAndPrintProperties($@"{currentWay}\new_version_dll\TestLib.dll", "TestLib.TestClass");
+            Console.WriteLine();
 
-            // Проверяем чтение конфига.                                                                          // Тоже в консоль.
-            // Чтение общих свойств.
+            Console.WriteLine("Проверяем чтение конфига.");
+            Console.WriteLine("Чтение общих свойств:");
             ConfigReader configReader = new ConfigReader();
             Console.WriteLine(configReader.GetCommonParameterFromConfig("IntSetting"));
             Console.WriteLine(configReader.GetCommonParameterFromConfig("StrSetting"));
-
-            // Чтение свойств из кастомной секции.
+ 
+            Console.WriteLine("Чтение свойств из кастомной секции:");
             ConfigReader.SettingsSection settingsSection = (ConfigReader.SettingsSection)ConfigurationManager
                 .GetSection("ProgramSettings");
             ConfigurationElementCollection settings = settingsSection.SubSettings;
@@ -66,12 +67,13 @@
         /// <param name="typeName">Пространство имен и имя класс.</param>
         public static void CreateInstanceAndPrintProperties(string assemblyWay, string typeName)
         {
-            Assembly assembly = Assembly.LoadFile(assemblyWay);   // Лучше писать в консоль версию сборки.
+            Assembly assembly = Assembly.LoadFile(assemblyWay);
+            Console.WriteLine($"Загружена сборка: {assembly.FullName}");
             Type type = assembly.GetType(typeName);
 
             // Можно через активатор переделать.
             ConstructorInfo constructor = type.GetConstructors()[0];
-            var instance = constructor.Invoke(new object[0]); // Array.Empty<object>()
+            var instance = constructor.Invoke(new object[0]);
             PrintObjectProperties(instance);
         }
     }

@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Text.RegularExpressions;
     using Task8;
 
     /// <summary>
@@ -15,13 +16,12 @@
         /// </summary>
         internal static void Main()
         {
-            // Класс из Таsк8. Метод дописал в него.
             StringsVault vault = new StringsVault("ClientConnectionLog.log");
-            List<string> filtred = vault.GetFiltredAndOrdredStrings(new DateTime(2007, 12, 11));
+            List<string> filtred = vault.GetFiltredAndOrdredStrings(new DateTime(2008, 01, 22));
             foreach (string s in filtred)
             {
                 Console.WriteLine(s);
-            }          
+            }
         }
 
         /// <summary>
@@ -34,9 +34,22 @@
         internal static List<string> GetFiltredAndOrdredStrings(this StringsVault vault, DateTime date)
         {
             return vault.Strings
-                .Where(line => line.StartsWith($"{date.Day}.{date.Month}.{date.Year}"))
-                .OrderBy(line => line)
+                .Where(line => line.StartsWith($"{date:dd.MM.yyyy}"))
+                .OrderBy(line => GetTime(line))
                 .ToList();
+        }
+
+        /// <summary>
+        /// Получает текущую дату, но время берется из параметра.
+        /// </summary>
+        /// <param name="source">Строка, содержащая время.</param>
+        /// <returns>Дату с временем.</returns>
+        internal static DateTime GetTime(string source)
+        {
+            Regex time = new Regex(@"\d?\d{1}:\d{2}:\d{2}");
+            string format = "H:mm:ss";
+
+            return DateTime.ParseExact(time.Match(source).Value, format, null);
         }
     }
 }

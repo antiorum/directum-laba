@@ -20,4 +20,10 @@
     <ProjectReference Include="..\Task9Framework\Task9Framework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="test.rtf.gz">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

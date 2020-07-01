@@ -11,15 +11,15 @@
         /// Печатает права пользователя.
         /// </summary>
         /// <param name="rights">Права пользователя</param>
-        public static void PrintRights(AccessRights rights)
+        /// <returns>Строку с правами.</returns>
+        public static string RightsToString(AccessRights rights)
         {
             if (rights == AccessRights.AccessDenied)
             {
-                Console.WriteLine(AccessRights.AccessDenied);
-                return;
+                return AccessRights.AccessDenied.ToString();
             }
 
-            Console.WriteLine("{0:G}, {1:G}", rights - 1, rights);
+            return $"{rights-1}, {rights}";
         }
     }
 }

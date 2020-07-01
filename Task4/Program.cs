@@ -25,8 +25,8 @@
             CheckForDataSetToString();
 
             // Проверяем работу печати прав
-            AccessRightsUtil.PrintRights(AccessRights.Delete);
-            AccessRightsUtil.PrintRights(AccessRights.AccessDenied);
+            Console.WriteLine(AccessRightsUtil.RightsToString(AccessRights.Delete));
+            Console.WriteLine(AccessRightsUtil.RightsToString(AccessRights.AccessDenied));
 
             // Проверяем работу логгера.
             using (Logger logger = new Logger(@".\log.txt"))
@@ -146,7 +146,7 @@
         /// Выполняет конкатенцию строк из массива средствами String.
         /// </summary>
         /// <param name="array">Массив строк.</param>
-        private static void StringConcat(string[] array)
+        public static void StringConcat(string[] array)
         {
             string seed = string.Empty;
             foreach (var s in array)
@@ -159,7 +159,7 @@
         /// Выполняет конкатенцию строк из массива средствами StringBuilder.
         /// </summary>
         /// <param name="array">Массив строк.</param>
-        private static void StringBuilderConcat(string[] array)
+        public static void StringBuilderConcat(string[] array)
         {
             StringBuilder stringBuilder = new StringBuilder();
             foreach (var s in array)
@@ -174,7 +174,7 @@
         /// <param name="concatAction">Функция конкатенации.</param>
         /// <param name="arg">Массив строк для конкатенации.</param>
         /// <returns>Кол-во миллисекунд.</returns>
-        private static long GetTimeConcat(Action<string[]> concatAction, string[] arg)
+        public static long GetTimeConcat(Action<string[]> concatAction, string[] arg)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -190,7 +190,7 @@
         /// <param name="from">Строка, из которой получают подстроку.</param>
         /// <param name="subLength">Длина подстроки.</param>
         /// <returns>Кол-во миллисекунд.</returns>
-        private static long GetTimeSubstring(Action<string, int> substringAction, string from, int subLength)
+        public static long GetTimeSubstring(Action<string, int> substringAction, string from, int subLength)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();

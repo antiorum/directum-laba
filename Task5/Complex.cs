@@ -51,16 +51,7 @@
         /// <returns>Результат сравнения - целое число</returns>
         public int CompareTo([AllowNull] Complex other)
         {
-            if (this.Abs < other.Abs)
-            {
-                return -1;
-            }
-            else if (this.Abs > other.Abs)
-            {
-                return 1;
-            }
-
-            return 0;
+            return this.Abs.CompareTo(other.Abs);           
         }
 
         /// <summary>
