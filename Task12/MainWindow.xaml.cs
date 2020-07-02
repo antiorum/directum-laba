@@ -18,7 +18,7 @@
         {
             this.Initialized += this.MainWindow_Initialized;
             this.InitializeComponent();
-            hello.Click += this.OnClick;
+            hello.Click += this.OnClick;    // Указать обработчик лучше было в xaml. (Можно просто дважды кликнуть на кнопку и создастся обработчик.)
         }
 
         /// <summary>
